@@ -76,6 +76,29 @@
   }
   .nav-cta:hover { opacity: .85; transform: translateY(-1px); }
 
+  /* ── LANG TOGGLE ── */
+  .lang-toggle {
+    display: flex; align-items: center;
+    background: rgba(0,170,255,.1);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    overflow: hidden;
+    margin-right: 12px;
+  }
+  .lang-btn {
+    padding: 8px 12px;
+    font-family: 'Barlow', sans-serif;
+    font-size: .75rem; font-weight: 700;
+    letter-spacing: 1px;
+    background: transparent;
+    color: var(--gray);
+    border: none; cursor: pointer;
+    transition: all .2s;
+  }
+  .lang-btn.active { background: var(--blue); color: white; }
+  .lang-btn:hover:not(.active) { color: var(--cyan); }
+  .nav-right { display: flex; align-items: center; gap: 0; }
+
   /* ── HERO ── */
   .hero {
     min-height: 100vh;
@@ -581,12 +604,18 @@
     T-SAINT <span>&nbsp;TEC</span>
   </a>
   <ul class="nav-links">
-    <li><a href="#categories">Categories</a></li>
-    <li><a href="#laptops">Laptops</a></li>
-    <li><a href="#features">Why Us</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="#categories" data-en="Categories" data-fr="Catégories">Categories</a></li>
+    <li><a href="#laptops" data-en="Laptops" data-fr="Ordinateurs">Laptops</a></li>
+    <li><a href="#features" data-en="Why Us" data-fr="Pourquoi Nous">Why Us</a></li>
+    <li><a href="#contact" data-en="Contact" data-fr="Contact">Contact</a></li>
   </ul>
-  <a class="nav-cta" href="https://wa.me/237650922053" target="_blank">Order on WhatsApp</a>
+  <div class="nav-right">
+    <div class="lang-toggle">
+      <button class="lang-btn active" onclick="setLang('en')">EN</button>
+      <button class="lang-btn" onclick="setLang('fr')">FR</button>
+    </div>
+    <a class="nav-cta" href="https://wa.me/237650922053" target="_blank" data-en="Order on WhatsApp" data-fr="Commander sur WhatsApp">Order on WhatsApp</a>
+  </div>
 </nav>
 
 <!-- HERO -->
@@ -595,27 +624,27 @@
   <div class="hero-grid"></div>
 
   <div class="hero-inner">
-    <div class="hero-tag">Douala's #1 Laptop Store</div>
+    <div class="hero-tag" data-en="Douala's #1 Laptop Store" data-fr="Le N°1 des Laptops à Douala">Douala's #1 Laptop Store</div>
     <h1>
       HOT<br>
       <span class="accent">LAPTOP</span><br>
       <span class="stroke">DEALS</span>
     </h1>
-    <p class="hero-sub">Affordable. Reliable. Powerful. UK Used, Fairly Used & Brand New laptops — for work, gaming, and everything in between.</p>
+    <p class="hero-sub" data-en="Affordable. Reliable. Powerful. UK Used, Fairly Used & Brand New laptops — for work, gaming, and everything in between." data-fr="Abordable. Fiable. Puissant. Laptops UK, Occasion & Neufs — pour le travail, le gaming et tout le reste.">Affordable. Reliable. Powerful. UK Used, Fairly Used & Brand New laptops — for work, gaming, and everything in between.</p>
 
     <div class="hero-price">
-      <div class="price-label">Starting From</div>
+      <div class="price-label" data-en="Starting From" data-fr="À Partir De">Starting From</div>
       <div class="price-number">150.000 <span>FCFA</span></div>
     </div>
 
     <div class="hero-actions">
-      <a class="btn-primary" href="#laptops">🖥 Browse Laptops</a>
+      <a class="btn-primary" href="#laptops" data-en="🖥 Browse Laptops" data-fr="🖥 Voir les Laptops">🖥 Browse Laptops</a>
       <a class="btn-whatsapp" href="https://wa.me/237650922053" target="_blank">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M11.999 0C5.373 0 0 5.373 0 12c0 2.117.554 4.106 1.523 5.832L0 24l6.335-1.498A11.946 11.946 0 0012 24c6.627 0 12-5.373 12-12S18.626 0 11.999 0zm.001 21.818a9.806 9.806 0 01-5.006-1.374l-.36-.213-3.72.879.936-3.618-.234-.373A9.79 9.79 0 012.182 12c0-5.412 4.406-9.818 9.818-9.818S21.818 6.588 21.818 12c0 5.413-4.406 9.818-9.818 9.818z"/></svg>
-        Chat Now
+        <span data-en="Chat Now" data-fr="Discuter Maintenant">Chat Now</span>
       </a>
     </div>
-    <div class="location-chip">AKWA, DOUALA — Fast Local Delivery</div>
+    <div class="location-chip" data-en="AKWA, DOUALA — Fast Local Delivery" data-fr="AKWA, DOUALA — Livraison Locale Rapide">AKWA, DOUALA — Fast Local Delivery</div>
   </div>
 
   <div class="hero-laptops">
@@ -653,7 +682,7 @@
 
 <!-- BRANDS -->
 <div class="brands reveal">
-  <div class="brands-label">Premium Brands We Carry</div>
+  <div class="brands-label" data-en="Premium Brands We Carry" data-fr="Marques Premium Disponibles">Premium Brands We Carry</div>
   <div class="brands-row">
     <span class="brand-item">HP</span>
     <span class="brand-item">DELL</span>
@@ -668,72 +697,72 @@
 
 <!-- CATEGORIES -->
 <section id="categories">
-  <div class="section-tag">What We Offer</div>
-  <h2>SHOP BY <em>CATEGORY</em></h2>
-  <p class="section-sub">Whether you need a business workhorse, a gaming beast, or an everyday companion — we have the right machine for you.</p>
+  <div class="section-tag" data-en="What We Offer" data-fr="Ce Que Nous Offrons">What We Offer</div>
+  <h2 data-en="SHOP BY <em>CATEGORY</em>" data-fr="ACHETER PAR <em>CATÉGORIE</em>">SHOP BY <em>CATEGORY</em></h2>
+  <p class="section-sub" data-en="Whether you need a business workhorse, a gaming beast, or an everyday companion — we have the right machine for you." data-fr="Que vous ayez besoin d'un ordinateur professionnel, de gaming ou du quotidien — nous avons la machine qu'il vous faut.">Whether you need a business workhorse, a gaming beast, or an everyday companion — we have the right machine for you.</p>
 
   <div class="categories-grid">
     <div class="cat-card reveal">
       <span class="cat-arrow">→</span>
       <div class="cat-icon">💼</div>
-      <div class="cat-name">Business Laptops</div>
-      <div class="cat-desc">For Work & Study. Durable, fast, and professional machines built for productivity.</div>
+      <div class="cat-name" data-en="Business Laptops" data-fr="Laptops Professionnels">Business Laptops</div>
+      <div class="cat-desc" data-en="For Work & Study. Durable, fast, and professional machines built for productivity." data-fr="Pour le Travail & les Études. Machines durables, rapides et professionnelles.">For Work & Study. Durable, fast, and professional machines built for productivity.</div>
     </div>
     <div class="cat-card reveal">
       <span class="cat-arrow">→</span>
       <div class="cat-icon">🪶</div>
-      <div class="cat-name">Ultra Portable</div>
-      <div class="cat-desc">Light & Powerful. Perfect for on-the-go professionals who need power without the weight.</div>
+      <div class="cat-name" data-en="Ultra Portable" data-fr="Ultra Portable">Ultra Portable</div>
+      <div class="cat-desc" data-en="Light & Powerful. Perfect for on-the-go professionals who need power without the weight." data-fr="Léger & Puissant. Parfait pour les professionnels mobiles qui veulent la puissance sans le poids.">Light & Powerful. Perfect for on-the-go professionals who need power without the weight.</div>
     </div>
     <div class="cat-card reveal">
       <span class="cat-arrow">→</span>
       <div class="cat-icon">🎓</div>
-      <div class="cat-name">Student Friendly</div>
-      <div class="cat-desc">Performance You Need. Affordable yet capable laptops that won't slow you down.</div>
+      <div class="cat-name" data-en="Student Friendly" data-fr="Pour Étudiants">Student Friendly</div>
+      <div class="cat-desc" data-en="Performance You Need. Affordable yet capable laptops that won't slow you down." data-fr="La Performance Dont Vous Avez Besoin. Des laptops abordables et performants.">Performance You Need. Affordable yet capable laptops that won't slow you down.</div>
     </div>
     <div class="cat-card reveal">
       <span class="cat-arrow">→</span>
       <div class="cat-icon">🎮</div>
-      <div class="cat-name">Gaming Laptops</div>
-      <div class="cat-desc">Play Without Limits. High-end GPUs and smooth gameplay for an immersive experience.</div>
+      <div class="cat-name" data-en="Gaming Laptops" data-fr="Laptops Gaming">Gaming Laptops</div>
+      <div class="cat-desc" data-en="Play Without Limits. High-end GPUs and smooth gameplay for an immersive experience." data-fr="Jouez Sans Limites. GPU haut de gamme et gameplay fluide pour une expérience immersive.">Play Without Limits. High-end GPUs and smooth gameplay for an immersive experience.</div>
     </div>
     <div class="cat-card reveal">
       <span class="cat-arrow">→</span>
       <div class="cat-icon">🎧</div>
-      <div class="cat-name">Accessories</div>
-      <div class="cat-desc">Everything in One Place. Bags, mice, headsets, cooling pads — all here.</div>
+      <div class="cat-name" data-en="Accessories" data-fr="Accessoires">Accessories</div>
+      <div class="cat-desc" data-en="Everything in One Place. Bags, mice, headsets, cooling pads — all here." data-fr="Tout en Un Seul Endroit. Sacs, souris, casques, refroidisseurs — tout ici.">Everything in One Place. Bags, mice, headsets, cooling pads — all here.</div>
     </div>
   </div>
 </section>
 
 <!-- CONDITION -->
 <section style="padding-top:0; padding-bottom:80px;">
-  <div class="section-tag">Stock Conditions</div>
-  <h2>YOUR CHOICE OF <em>QUALITY</em></h2>
+  <div class="section-tag" data-en="Stock Conditions" data-fr="État du Stock">Stock Conditions</div>
+  <h2 data-en="YOUR CHOICE OF <em>QUALITY</em>" data-fr="VOTRE CHOIX DE <em>QUALITÉ</em>">YOUR CHOICE OF <em>QUALITY</em></h2>
   <div class="condition-grid reveal">
     <div class="cond-card uk">
       <span class="cond-badge">🇬🇧</span>
-      <div class="cond-label">UK USED</div>
-      <div class="cond-desc">Pre-owned laptops imported from the UK. Tested, cleaned, and ready to perform at excellent value.</div>
+      <div class="cond-label" data-en="UK USED" data-fr="OCCASION UK">UK USED</div>
+      <div class="cond-desc" data-en="Pre-owned laptops imported from the UK. Tested, cleaned, and ready to perform at excellent value." data-fr="Laptops d'occasion importés du Royaume-Uni. Testés, nettoyés et prêts à fonctionner à prix réduit.">Pre-owned laptops imported from the UK. Tested, cleaned, and ready to perform at excellent value.</div>
     </div>
     <div class="cond-card fair">
       <span class="cond-badge">✅</span>
-      <div class="cond-label">FAIRLY USED</div>
-      <div class="cond-desc">Locally inspected and quality-checked second-hand machines in great working condition.</div>
+      <div class="cond-label" data-en="FAIRLY USED" data-fr="OCCASION LOCAL">FAIRLY USED</div>
+      <div class="cond-desc" data-en="Locally inspected and quality-checked second-hand machines in great working condition." data-fr="Machines d'occasion inspectées localement et vérifiées en excellent état de fonctionnement.">Locally inspected and quality-checked second-hand machines in great working condition.</div>
     </div>
     <div class="cond-card new">
       <span class="cond-badge">📦</span>
-      <div class="cond-label">BRAND NEW</div>
-      <div class="cond-desc">Sealed in the original box. Full manufacturer warranty. The freshest machines available.</div>
+      <div class="cond-label" data-en="BRAND NEW" data-fr="NEUF">BRAND NEW</div>
+      <div class="cond-desc" data-en="Sealed in the original box. Full manufacturer warranty. The freshest machines available." data-fr="Scellé dans la boîte d'origine. Garantie fabricant complète. Les machines les plus récentes disponibles.">Sealed in the original box. Full manufacturer warranty. The freshest machines available.</div>
     </div>
   </div>
 </section>
 
 <!-- LAPTOPS -->
 <section id="laptops" class="laptops-section">
-  <div class="section-tag">Our Inventory</div>
-  <h2>AMAZING <em>LAPTOPS</em> WE OFFER</h2>
-  <p class="section-sub">A curated selection of top models across all major brands — with regular restocks.</p>
+  <div class="section-tag" data-en="Our Inventory" data-fr="Notre Stock">Our Inventory</div>
+  <h2 data-en="AMAZING <em>LAPTOPS</em> WE OFFER" data-fr="NOS INCROYABLES <em>LAPTOPS</em>">AMAZING <em>LAPTOPS</em> WE OFFER</h2>
+  <p class="section-sub" data-en="A curated selection of top models across all major brands — with regular restocks." data-fr="Une sélection de modèles haut de gamme de toutes les grandes marques — avec des réassorts réguliers.">A curated selection of top models across all major brands — with regular restocks.</p>
 
   <div class="laptop-tabs">
     <button class="tab active" onclick="filterTab(this, 'all')">All Brands</button>
@@ -955,40 +984,40 @@
 
 <!-- FEATURES -->
 <section id="features" class="features">
-  <div class="section-tag">Why T-Saint Tec</div>
-  <h2>THE BEST PRICES. <em>ALWAYS.</em></h2>
-  <p class="section-sub">We built our reputation on trust, transparency, and giving our customers machines that actually work.</p>
+  <div class="section-tag" data-en="Why T-Saint Tec" data-fr="Pourquoi T-Saint Tec">Why T-Saint Tec</div>
+  <h2 data-en="THE BEST PRICES. <em>ALWAYS.</em>" data-fr="LES MEILLEURS PRIX. <em>TOUJOURS.</em>">THE BEST PRICES. <em>ALWAYS.</em></h2>
+  <p class="section-sub" data-en="We built our reputation on trust, transparency, and giving our customers machines that actually work." data-fr="Nous avons bâti notre réputation sur la confiance, la transparence et des machines qui fonctionnent vraiment.">We built our reputation on trust, transparency, and giving our customers machines that actually work.</p>
 
   <div class="features-grid">
     <div class="feat-item reveal">
       <div class="feat-icon-wrap">⚡</div>
-      <div class="feat-title">High Performance</div>
-      <div class="feat-desc">Core i5, i7, i9 processors. SSD storage. RAM upgrades available on request.</div>
+      <div class="feat-title" data-en="High Performance" data-fr="Haute Performance">High Performance</div>
+      <div class="feat-desc" data-en="Core i5, i7, i9 processors. SSD storage. RAM upgrades available on request." data-fr="Processeurs Core i5, i7, i9. Stockage SSD. Mise à niveau RAM disponible sur demande.">Core i5, i7, i9 processors. SSD storage. RAM upgrades available on request.</div>
     </div>
     <div class="feat-item reveal">
       <div class="feat-icon-wrap">🎮</div>
-      <div class="feat-title">Powerful Gaming</div>
-      <div class="feat-desc">High-end GPUs and smooth gameplay. We stock the best gaming machines in Douala.</div>
+      <div class="feat-title" data-en="Powerful Gaming" data-fr="Gaming Puissant">Powerful Gaming</div>
+      <div class="feat-desc" data-en="High-end GPUs and smooth gameplay. We stock the best gaming machines in Douala." data-fr="GPU haut de gamme et gameplay fluide. Nous stockons les meilleures machines gaming de Douala.">High-end GPUs and smooth gameplay. We stock the best gaming machines in Douala.</div>
     </div>
     <div class="feat-item reveal">
       <div class="feat-icon-wrap">🔋</div>
-      <div class="feat-title">Long Battery Life</div>
-      <div class="feat-desc">Stay productive all day. We test every battery before putting it on the shelf.</div>
+      <div class="feat-title" data-en="Long Battery Life" data-fr="Longue Durée de Vie">Long Battery Life</div>
+      <div class="feat-desc" data-en="Stay productive all day. We test every battery before putting it on the shelf." data-fr="Restez productif toute la journée. Nous testons chaque batterie avant de la mettre en rayon.">Stay productive all day. We test every battery before putting it on the shelf.</div>
     </div>
     <div class="feat-item reveal">
       <div class="feat-icon-wrap">🛡</div>
-      <div class="feat-title">Warranty Available</div>
-      <div class="feat-desc">Peace of mind guaranteed. Ask about warranty options on your purchase.</div>
+      <div class="feat-title" data-en="Warranty Available" data-fr="Garantie Disponible">Warranty Available</div>
+      <div class="feat-desc" data-en="Peace of mind guaranteed. Ask about warranty options on your purchase." data-fr="Tranquillité d'esprit garantie. Renseignez-vous sur les options de garantie lors de votre achat.">Peace of mind guaranteed. Ask about warranty options on your purchase.</div>
     </div>
     <div class="feat-item reveal">
       <div class="feat-icon-wrap">💰</div>
-      <div class="feat-title">Affordable Prices</div>
-      <div class="feat-desc">Best value for your money — starting from just 150,000 FCFA.</div>
+      <div class="feat-title" data-en="Affordable Prices" data-fr="Prix Abordables">Affordable Prices</div>
+      <div class="feat-desc" data-en="Best value for your money — starting from just 150,000 FCFA." data-fr="Meilleur rapport qualité-prix — à partir de seulement 150 000 FCFA.">Best value for your money — starting from just 150,000 FCFA.</div>
     </div>
     <div class="feat-item reveal">
       <div class="feat-icon-wrap">📦</div>
-      <div class="feat-title">All Accessories</div>
-      <div class="feat-desc">Bags, mice, headsets, cooling pads — everything you need in one place.</div>
+      <div class="feat-title" data-en="All Accessories" data-fr="Tous les Accessoires">All Accessories</div>
+      <div class="feat-desc" data-en="Bags, mice, headsets, cooling pads — everything you need in one place." data-fr="Sacs, souris, casques, refroidisseurs — tout ce dont vous avez besoin en un seul endroit.">Bags, mice, headsets, cooling pads — everything you need in one place.</div>
     </div>
   </div>
 </section>
@@ -996,56 +1025,75 @@
 <!-- CTA -->
 <section id="contact" class="cta-section">
   <div class="cta-bg"></div>
-  <div class="section-tag">Get In Touch</div>
-  <h2>READY TO <em>ORDER?</em></h2>
-  <p>Contact us on WhatsApp or call us directly. Fast delivery within Douala. Limited stock — don't wait.</p>
+  <div class="section-tag" data-en="Get In Touch" data-fr="Contactez-Nous">Get In Touch</div>
+  <h2 data-en="READY TO <em>ORDER?</em>" data-fr="PRÊT À <em>COMMANDER?</em>">READY TO <em>ORDER?</em></h2>
+  <p data-en="Contact us on WhatsApp or call us directly. Fast delivery within Douala. Limited stock — don't wait." data-fr="Contactez-nous sur WhatsApp ou appelez-nous directement. Livraison rapide à Douala. Stock limité — ne tardez pas.">Contact us on WhatsApp or call us directly. Fast delivery within Douala. Limited stock — don't wait.</p>
 
   <div class="cta-btns">
     <a class="btn-whatsapp" href="https://wa.me/237650922053" target="_blank">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M11.999 0C5.373 0 0 5.373 0 12c0 2.117.554 4.106 1.523 5.832L0 24l6.335-1.498A11.946 11.946 0 0012 24c6.627 0 12-5.373 12-12S18.626 0 11.999 0zm.001 21.818a9.806 9.806 0 01-5.006-1.374l-.36-.213-3.72.879.936-3.618-.234-.373A9.79 9.79 0 012.182 12c0-5.412 4.406-9.818 9.818-9.818S21.818 6.588 21.818 12c0 5.413-4.406 9.818-9.818 9.818z"/></svg>
-      Order on WhatsApp
+      <span data-en="Order on WhatsApp" data-fr="Commander sur WhatsApp">Order on WhatsApp</span>
     </a>
-    <a class="btn-primary" href="tel:+237650922053">📞 Call Us Now</a>
+    <a class="btn-primary" href="tel:+237650922053">
+      <span data-en="📞 Call Us Now" data-fr="📞 Appelez-Nous">📞 Call Us Now</span>
+    </a>
   </div>
 
   <div class="phone-display">
     <div class="phone-number">
-      <small>Call or WhatsApp</small>
+      <small data-en="Call or WhatsApp" data-fr="Appel ou WhatsApp">Call or WhatsApp</small>
       650 922 053
     </div>
     <div class="phone-number">
-      <small>Alternate Number</small>
+      <small data-en="Alternate Number" data-fr="Numéro Alternatif">Alternate Number</small>
       697 775 998
     </div>
   </div>
 
-  <div class="location-chip" style="margin-top:30px; font-size:.9rem;">AKWA, DOUALA — Walk in or order for delivery</div>
+  <div class="location-chip" style="margin-top:30px; font-size:.9rem;" data-en="AKWA, DOUALA — Walk in or order for delivery" data-fr="AKWA, DOUALA — Venez ou commandez pour la livraison">AKWA, DOUALA — Walk in or order for delivery</div>
 </section>
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-copy">© 2025 <span>T-Saint Tec</span>. All rights reserved. Douala, Cameroon.</div>
-  <div class="footer-tagline">AFFORDABLE · RELIABLE · POWERFUL</div>
+  <div class="footer-copy">© 2025 <span>T-Saint Tec</span>. <span data-en="All rights reserved. Douala, Cameroon." data-fr="Tous droits réservés. Douala, Cameroun.">All rights reserved. Douala, Cameroon.</span></div>
+  <div class="footer-tagline" data-en="AFFORDABLE · RELIABLE · POWERFUL" data-fr="ABORDABLE · FIABLE · PUISSANT">AFFORDABLE · RELIABLE · POWERFUL</div>
 </footer>
 
 <script>
-  // Tab filter
+  // ── LANGUAGE SWITCHER ──
+  let currentLang = 'en';
+
+  function setLang(lang) {
+    currentLang = lang;
+
+    // Update toggle buttons
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.textContent.toLowerCase() === lang);
+    });
+
+    // Update all elements with data-en / data-fr
+    document.querySelectorAll('[data-en]').forEach(el => {
+      const text = lang === 'fr' ? el.getAttribute('data-fr') : el.getAttribute('data-en');
+      if (text) el.innerHTML = text;
+    });
+
+    // Update html lang attribute
+    document.documentElement.lang = lang;
+  }
+
+  // ── TAB FILTER ──
   function filterTab(btn, brand) {
     document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
     btn.classList.add('active');
     document.querySelectorAll('.model-card').forEach(card => {
-      if (brand === 'all' || card.dataset.brand === brand) {
-        card.style.display = '';
-      } else {
-        card.style.display = 'none';
-      }
+      card.style.display = (brand === 'all' || card.dataset.brand === brand) ? '' : 'none';
     });
   }
 
-  // Scroll reveal
+  // ── SCROLL REVEAL ──
   const observer = new IntersectionObserver(entries => {
     entries.forEach(e => {
-      if (e.isIntersecting) { e.target.classList.add('visible'); }
+      if (e.isIntersecting) e.target.classList.add('visible');
     });
   }, { threshold: 0.12 });
 
