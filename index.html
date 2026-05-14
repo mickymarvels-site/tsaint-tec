@@ -417,18 +417,41 @@
     background: var(--card);
     border: 1px solid var(--border);
     border-radius: 8px;
-    padding: 22px 18px;
+    padding: 0;
     transition: border-color .2s, transform .2s;
     cursor: pointer;
+    overflow: hidden;
   }
   .model-card:hover { border-color: rgba(0,170,255,.5); transform: translateY(-3px); }
+
+  .model-img {
+    width: 100%; height: 160px;
+    object-fit: cover;
+    background: #0a1a30;
+    display: block;
+  }
+  .model-img-wrap {
+    width: 100%; height: 160px;
+    background: linear-gradient(135deg, #0a1830, #0d2040);
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden;
+  }
+  .model-img-wrap img {
+    width: 100%; height: 100%;
+    object-fit: contain;
+    padding: 12px;
+    transition: transform .3s;
+  }
+  .model-card:hover .model-img-wrap img { transform: scale(1.05); }
+
+  .model-info { padding: 16px; }
 
   .model-brand {
     font-size: .65rem; font-weight: 700;
     letter-spacing: 2px; text-transform: uppercase;
-    color: var(--cyan); margin-bottom: 6px;
+    color: var(--cyan); margin-bottom: 4px;
   }
-  .model-name { font-size: 1rem; font-weight: 700; margin-bottom: 10px; }
+  .model-name { font-size: .95rem; font-weight: 700; margin-bottom: 10px; }
   .model-tags { display: flex; gap: 6px; flex-wrap: wrap; }
   .model-tag {
     font-size: .6rem; font-weight: 700; letter-spacing: 1px;
@@ -599,27 +622,27 @@
     <div class="laptop-stack">
       <div class="laptop-card" style="animation-delay:.1s">
         <span class="lcard-badge hot">HOT</span>
-        <div class="lcard-icon">💻</div>
+        <img src="https://i.rtings.com/assets/products/oWQQOtFG/hp-elitebook-840-g5/design-medium.jpg" alt="HP EliteBook 840 G5" style="width:100%;height:80px;object-fit:contain;margin-bottom:6px;border-radius:4px;background:#0a1830;">
         <div class="lcard-brand">HP</div>
         <div class="lcard-model">EliteBook 840 G5</div>
         <div class="lcard-spec">Core i5 • 8GB RAM • SSD</div>
       </div>
       <div class="laptop-card" style="animation-delay:.2s">
         <span class="lcard-badge new">NEW</span>
-        <div class="lcard-icon">⚡</div>
+        <img src="https://p1-ofp.static.pub/medias/bWFzdGVyfHJvb3R8MTIzNDU2fGltYWdlL3BuZ3xoNTEvaGZkLzEzMjQzNDU2Nzg5MDEyLnBuZ3wzYTVkNzFkOGE0YTg4YzY0NzFiNDY5NGFiNzQ5MmM4ZGYyYmIyMWJhNTVlNTdhNGYyNzJiMGY3MWI2YWZiMzFl/lenovo-laptop-thinkpad-x1-carbon-gen-11-14-intel-hero.png" alt="ThinkPad X1 Carbon" style="width:100%;height:80px;object-fit:contain;margin-bottom:6px;border-radius:4px;background:#0a1830;">
         <div class="lcard-brand">LENOVO</div>
         <div class="lcard-model">ThinkPad X1 Carbon</div>
         <div class="lcard-spec">Core i7 • 16GB RAM • SSD</div>
       </div>
       <div class="laptop-card" style="animation-delay:.3s">
         <span class="lcard-badge">GAMING</span>
-        <div class="lcard-icon">🎮</div>
+        <img src="https://static.acer.com/up/Resource/Acer/Laptops/Nitro_5/Images/20220103/Nitro5-AN515-58-ksp-04.png" alt="Acer Nitro 5" style="width:100%;height:80px;object-fit:contain;margin-bottom:6px;border-radius:4px;background:#0a1830;">
         <div class="lcard-brand">ACER</div>
         <div class="lcard-model">Nitro 5</div>
         <div class="lcard-spec">i7 • GTX 1650 • 16GB</div>
       </div>
       <div class="laptop-card" style="animation-delay:.4s">
-        <div class="lcard-icon">🔋</div>
+        <img src="https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/notebooks/xps-notebooks/xps-13-9315/media-gallery/black/notebook-xps-13-9315-t-black-gallery-4.psd?fmt=png-alpha&pscan=auto&scl=1&hei=402&wid=402&qlt=100,1&resMode=sharp2&size=402,402&chrss=full" alt="Dell XPS 13" style="width:100%;height:80px;object-fit:contain;margin-bottom:6px;border-radius:4px;background:#0a1830;">
         <div class="lcard-brand">DELL</div>
         <div class="lcard-model">XPS 13</div>
         <div class="lcard-spec">Core i5 • 8GB • Ultra-thin</div>
@@ -724,133 +747,208 @@
   <div class="models-grid" id="modelsGrid">
     <!-- HP -->
     <div class="model-card" data-brand="hp">
-      <div class="model-brand">HP</div>
-      <div class="model-name">EliteBook 840 G5</div>
-      <div class="model-tags"><span class="model-tag">Business</span><span class="model-tag">UK Used</span></div>
+      <div class="model-img-wrap"><img src="https://i.rtings.com/assets/products/oWQQOtFG/hp-elitebook-840-g5/design-medium.jpg" alt="HP EliteBook 840 G5" onerror="this.src='https://placehold.co/300x160/0a1830/00aaff?text=HP+EliteBook+840+G5'"></div>
+      <div class="model-info">
+        <div class="model-brand">HP</div>
+        <div class="model-name">EliteBook 840 G5</div>
+        <div class="model-tags"><span class="model-tag">Business</span><span class="model-tag">UK Used</span></div>
+      </div>
     </div>
     <div class="model-card" data-brand="hp">
-      <div class="model-brand">HP</div>
-      <div class="model-name">EliteBook 850 G6</div>
-      <div class="model-tags"><span class="model-tag">Business</span><span class="model-tag">Core i7</span></div>
+      <div class="model-img-wrap"><img src="https://i.rtings.com/assets/products/test/hp-elitebook-850-g6/design-medium.jpg" alt="HP EliteBook 850 G6" onerror="this.src='https://placehold.co/300x160/0a1830/00aaff?text=HP+EliteBook+850+G6'"></div>
+      <div class="model-info">
+        <div class="model-brand">HP</div>
+        <div class="model-name">EliteBook 850 G6</div>
+        <div class="model-tags"><span class="model-tag">Business</span><span class="model-tag">Core i7</span></div>
+      </div>
     </div>
     <div class="model-card" data-brand="hp">
-      <div class="model-brand">HP</div>
-      <div class="model-name">ProBook 450 G6</div>
-      <div class="model-tags"><span class="model-tag">Student</span><span class="model-tag">Affordable</span></div>
+      <div class="model-img-wrap"><img src="https://ssl-product-images.www8-hp.com/digmedialib/prodimg/lowres/c06303492.png" alt="HP ProBook 450 G6" onerror="this.src='https://placehold.co/300x160/0a1830/00aaff?text=HP+ProBook+450+G6'"></div>
+      <div class="model-info">
+        <div class="model-brand">HP</div>
+        <div class="model-name">ProBook 450 G6</div>
+        <div class="model-tags"><span class="model-tag">Student</span><span class="model-tag">Affordable</span></div>
+      </div>
     </div>
     <div class="model-card" data-brand="hp">
-      <div class="model-brand">HP</div>
-      <div class="model-name">Pavilion 15</div>
-      <div class="model-tags"><span class="model-tag">Everyday</span><span class="model-tag">Brand New</span></div>
+      <div class="model-img-wrap"><img src="https://ssl-product-images.www8-hp.com/digmedialib/prodimg/lowres/c08240379.png" alt="HP Pavilion 15" onerror="this.src='https://placehold.co/300x160/0a1830/00aaff?text=HP+Pavilion+15'"></div>
+      <div class="model-info">
+        <div class="model-brand">HP</div>
+        <div class="model-name">Pavilion 15</div>
+        <div class="model-tags"><span class="model-tag">Everyday</span><span class="model-tag">Brand New</span></div>
+      </div>
     </div>
     <div class="model-card" data-brand="hp">
-      <div class="model-brand">HP</div>
-      <div class="model-name">ZBook 15 G5</div>
-      <div class="model-tags"><span class="model-tag">Workstation</span><span class="model-tag">Design</span></div>
+      <div class="model-img-wrap"><img src="https://ssl-product-images.www8-hp.com/digmedialib/prodimg/lowres/c06010890.png" alt="HP ZBook 15 G5" onerror="this.src='https://placehold.co/300x160/0a1830/00aaff?text=HP+ZBook+15+G5'"></div>
+      <div class="model-info">
+        <div class="model-brand">HP</div>
+        <div class="model-name">ZBook 15 G5</div>
+        <div class="model-tags"><span class="model-tag">Workstation</span><span class="model-tag">Design</span></div>
+      </div>
     </div>
     <!-- DELL -->
     <div class="model-card" data-brand="dell">
-      <div class="model-brand">Dell</div>
-      <div class="model-name">Latitude 5400</div>
-      <div class="model-tags"><span class="model-tag">Business</span><span class="model-tag">UK Used</span></div>
+      <div class="model-img-wrap"><img src="https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/notebooks/latitude-notebooks/latitude-14-5400/global-spi/laptop-latitude-14-5400-campaign-hero-504x350.jpg" alt="Dell Latitude 5400" onerror="this.src='https://placehold.co/300x160/0a1830/00aaff?text=Dell+Latitude+5400'"></div>
+      <div class="model-info">
+        <div class="model-brand">Dell</div>
+        <div class="model-name">Latitude 5400</div>
+        <div class="model-tags"><span class="model-tag">Business</span><span class="model-tag">UK Used</span></div>
+      </div>
     </div>
     <div class="model-card" data-brand="dell">
-      <div class="model-brand">Dell</div>
-      <div class="model-name">Latitude 7410</div>
-      <div class="model-tags"><span class="model-tag">Premium</span><span class="model-tag">Core i7</span></div>
+      <div class="model-img-wrap"><img src="https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/notebooks/latitude-notebooks/latitude-14-7410/global-spi/laptop-latitude-7410-campaign-hero-504x350-ng.jpg" alt="Dell Latitude 7410" onerror="this.src='https://placehold.co/300x160/0a1830/00aaff?text=Dell+Latitude+7410'"></div>
+      <div class="model-info">
+        <div class="model-brand">Dell</div>
+        <div class="model-name">Latitude 7410</div>
+        <div class="model-tags"><span class="model-tag">Premium</span><span class="model-tag">Core i7</span></div>
+      </div>
     </div>
     <div class="model-card" data-brand="dell">
-      <div class="model-brand">Dell</div>
-      <div class="model-name">Inspiron 15 5000</div>
-      <div class="model-tags"><span class="model-tag">Everyday</span><span class="model-tag">Student</span></div>
+      <div class="model-img-wrap"><img src="https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/notebooks/inspiron-notebooks/inspiron-15-5510/global-spi/notebook-inspiron-15-5510-campaign-hero-504x350-gy.jpg" alt="Dell Inspiron 15" onerror="this.src='https://placehold.co/300x160/0a1830/00aaff?text=Dell+Inspiron+15'"></div>
+      <div class="model-info">
+        <div class="model-brand">Dell</div>
+        <div class="model-name">Inspiron 15 5000</div>
+        <div class="model-tags"><span class="model-tag">Everyday</span><span class="model-tag">Student</span></div>
+      </div>
     </div>
     <div class="model-card" data-brand="dell">
-      <div class="model-brand">Dell</div>
-      <div class="model-name">XPS 13</div>
-      <div class="model-tags"><span class="model-tag">Ultra-thin</span><span class="model-tag">Premium</span></div>
+      <div class="model-img-wrap"><img src="https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/notebooks/xps-notebooks/xps-13-9315/media-gallery/black/notebook-xps-13-9315-t-black-gallery-4.psd?fmt=png-alpha&pscan=auto&scl=1&hei=402&wid=402&qlt=100,1&resMode=sharp2&size=402,402" alt="Dell XPS 13" onerror="this.src='https://placehold.co/300x160/0a1830/00aaff?text=Dell+XPS+13'"></div>
+      <div class="model-info">
+        <div class="model-brand">Dell</div>
+        <div class="model-name">XPS 13</div>
+        <div class="model-tags"><span class="model-tag">Ultra-thin</span><span class="model-tag">Premium</span></div>
+      </div>
     </div>
     <div class="model-card" data-brand="dell">
-      <div class="model-brand">Dell</div>
-      <div class="model-name">Precision 5530</div>
-      <div class="model-tags"><span class="model-tag">Workstation</span><span class="model-tag">4K</span></div>
+      <div class="model-img-wrap"><img src="https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/notebooks/precision-notebooks/15-5530/global-spi/mobile-workstation-precision-15-5530-campaign-hero-504x350.jpg" alt="Dell Precision 5530" onerror="this.src='https://placehold.co/300x160/0a1830/00aaff?text=Dell+Precision+5530'"></div>
+      <div class="model-info">
+        <div class="model-brand">Dell</div>
+        <div class="model-name">Precision 5530</div>
+        <div class="model-tags"><span class="model-tag">Workstation</span><span class="model-tag">4K</span></div>
+      </div>
     </div>
     <!-- LENOVO -->
     <div class="model-card" data-brand="lenovo">
-      <div class="model-brand">Lenovo</div>
-      <div class="model-name">ThinkPad T480</div>
-      <div class="model-tags"><span class="model-tag">Business</span><span class="model-tag">Reliable</span></div>
+      <div class="model-img-wrap"><img src="https://p4-ofp.static.pub/fes/cms/2022/09/07/y5or6bn3w5cz0syvlrglhjl5euhoru861324.png" alt="Lenovo ThinkPad T480" onerror="this.src='https://placehold.co/300x160/0a1830/00aaff?text=ThinkPad+T480'"></div>
+      <div class="model-info">
+        <div class="model-brand">Lenovo</div>
+        <div class="model-name">ThinkPad T480</div>
+        <div class="model-tags"><span class="model-tag">Business</span><span class="model-tag">Reliable</span></div>
+      </div>
     </div>
     <div class="model-card" data-brand="lenovo">
-      <div class="model-brand">Lenovo</div>
-      <div class="model-name">ThinkPad X1 Carbon</div>
-      <div class="model-tags"><span class="model-tag">Ultra-light</span><span class="model-tag">Premium</span></div>
+      <div class="model-img-wrap"><img src="https://p4-ofp.static.pub/fes/cms/2023/02/14/43gu95xd7g0vvh3zrqa0rj8oi4r9rt536870.png" alt="ThinkPad X1 Carbon" onerror="this.src='https://placehold.co/300x160/0a1830/00aaff?text=ThinkPad+X1+Carbon'"></div>
+      <div class="model-info">
+        <div class="model-brand">Lenovo</div>
+        <div class="model-name">ThinkPad X1 Carbon</div>
+        <div class="model-tags"><span class="model-tag">Ultra-light</span><span class="model-tag">Premium</span></div>
+      </div>
     </div>
     <div class="model-card" data-brand="lenovo">
-      <div class="model-brand">Lenovo</div>
-      <div class="model-name">ThinkPad E14</div>
-      <div class="model-tags"><span class="model-tag">Business</span><span class="model-tag">Affordable</span></div>
+      <div class="model-img-wrap"><img src="https://p4-ofp.static.pub/fes/cms/2022/09/07/4dxhm5i0ztomf6ur8wd5ggqhqrke1l409124.png" alt="ThinkPad E14" onerror="this.src='https://placehold.co/300x160/0a1830/00aaff?text=ThinkPad+E14'"></div>
+      <div class="model-info">
+        <div class="model-brand">Lenovo</div>
+        <div class="model-name">ThinkPad E14</div>
+        <div class="model-tags"><span class="model-tag">Business</span><span class="model-tag">Affordable</span></div>
+      </div>
     </div>
     <div class="model-card" data-brand="lenovo">
-      <div class="model-brand">Lenovo</div>
-      <div class="model-name">IdeaPad 3</div>
-      <div class="model-tags"><span class="model-tag">Student</span><span class="model-tag">Everyday</span></div>
+      <div class="model-img-wrap"><img src="https://p4-ofp.static.pub/fes/cms/2022/09/07/s3hpz0ub4n6ok9dtx6wl2w8lllpxjv505557.png" alt="Lenovo IdeaPad 3" onerror="this.src='https://placehold.co/300x160/0a1830/00aaff?text=IdeaPad+3'"></div>
+      <div class="model-info">
+        <div class="model-brand">Lenovo</div>
+        <div class="model-name">IdeaPad 3</div>
+        <div class="model-tags"><span class="model-tag">Student</span><span class="model-tag">Everyday</span></div>
+      </div>
     </div>
     <div class="model-card" data-brand="lenovo">
-      <div class="model-brand">Lenovo</div>
-      <div class="model-name">Legion 5</div>
-      <div class="model-tags"><span class="model-tag">Gaming</span><span class="model-tag">RTX GPU</span></div>
+      <div class="model-img-wrap"><img src="https://p4-ofp.static.pub/fes/cms/2022/09/07/rm93dkm9vbqq7aw0w7pj9u1r5k51qm401613.png" alt="Lenovo Legion 5" onerror="this.src='https://placehold.co/300x160/0a1830/00aaff?text=Legion+5'"></div>
+      <div class="model-info">
+        <div class="model-brand">Lenovo</div>
+        <div class="model-name">Legion 5</div>
+        <div class="model-tags"><span class="model-tag">Gaming</span><span class="model-tag">RTX GPU</span></div>
+      </div>
     </div>
     <!-- ACER -->
     <div class="model-card" data-brand="acer">
-      <div class="model-brand">Acer</div>
-      <div class="model-name">Aspire 5</div>
-      <div class="model-tags"><span class="model-tag">Student</span><span class="model-tag">Affordable</span></div>
+      <div class="model-img-wrap"><img src="https://static.acer.com/up/Resource/Acer/Laptops/Aspire_5/Images/20220103/Aspire5-A515-57-ksp-01.png" alt="Acer Aspire 5" onerror="this.src='https://placehold.co/300x160/0a1830/00aaff?text=Acer+Aspire+5'"></div>
+      <div class="model-info">
+        <div class="model-brand">Acer</div>
+        <div class="model-name">Aspire 5</div>
+        <div class="model-tags"><span class="model-tag">Student</span><span class="model-tag">Affordable</span></div>
+      </div>
     </div>
     <div class="model-card" data-brand="acer">
-      <div class="model-brand">Acer</div>
-      <div class="model-name">Swift 3</div>
-      <div class="model-tags"><span class="model-tag">Ultra-thin</span><span class="model-tag">Light</span></div>
+      <div class="model-img-wrap"><img src="https://static.acer.com/up/Resource/Acer/Laptops/Swift_3/Images/20220516/Swift3-SF314-512-ksp-06.png" alt="Acer Swift 3" onerror="this.src='https://placehold.co/300x160/0a1830/00aaff?text=Acer+Swift+3'"></div>
+      <div class="model-info">
+        <div class="model-brand">Acer</div>
+        <div class="model-name">Swift 3</div>
+        <div class="model-tags"><span class="model-tag">Ultra-thin</span><span class="model-tag">Light</span></div>
+      </div>
     </div>
     <div class="model-card" data-brand="acer">
-      <div class="model-brand">Acer</div>
-      <div class="model-name">Nitro 5</div>
-      <div class="model-tags"><span class="model-tag">Gaming</span><span class="model-tag">GTX 1650</span></div>
+      <div class="model-img-wrap"><img src="https://static.acer.com/up/Resource/Acer/Laptops/Nitro_5/Images/20220103/Nitro5-AN515-58-ksp-04.png" alt="Acer Nitro 5" onerror="this.src='https://placehold.co/300x160/0a1830/00aaff?text=Acer+Nitro+5'"></div>
+      <div class="model-info">
+        <div class="model-brand">Acer</div>
+        <div class="model-name">Nitro 5</div>
+        <div class="model-tags"><span class="model-tag">Gaming</span><span class="model-tag">GTX 1650</span></div>
+      </div>
     </div>
     <div class="model-card" data-brand="acer">
-      <div class="model-brand">Acer</div>
-      <div class="model-name">Predator Helios 300</div>
-      <div class="model-tags"><span class="model-tag">Gaming</span><span class="model-tag">RTX</span></div>
+      <div class="model-img-wrap"><img src="https://static.acer.com/up/Resource/Acer/Laptops/Predator_Helios_300/Images/20220516/Predator-Helios300-PH315-55-ksp-03.png" alt="Acer Predator Helios 300" onerror="this.src='https://placehold.co/300x160/0a1830/00aaff?text=Predator+Helios+300'"></div>
+      <div class="model-info">
+        <div class="model-brand">Acer</div>
+        <div class="model-name">Predator Helios 300</div>
+        <div class="model-tags"><span class="model-tag">Gaming</span><span class="model-tag">RTX</span></div>
+      </div>
     </div>
     <div class="model-card" data-brand="acer">
-      <div class="model-brand">Acer</div>
-      <div class="model-name">TravelMate P2</div>
-      <div class="model-tags"><span class="model-tag">Business</span><span class="model-tag">Rugged</span></div>
+      <div class="model-img-wrap"><img src="https://static.acer.com/up/Resource/Acer/Laptops/TravelMate_P2/Images/20220103/TMP215-54-ksp-01.png" alt="Acer TravelMate P2" onerror="this.src='https://placehold.co/300x160/0a1830/00aaff?text=TravelMate+P2'"></div>
+      <div class="model-info">
+        <div class="model-brand">Acer</div>
+        <div class="model-name">TravelMate P2</div>
+        <div class="model-tags"><span class="model-tag">Business</span><span class="model-tag">Rugged</span></div>
+      </div>
     </div>
     <!-- ASUS -->
     <div class="model-card" data-brand="asus">
-      <div class="model-brand">Asus</div>
-      <div class="model-name">VivoBook 15</div>
-      <div class="model-tags"><span class="model-tag">Student</span><span class="model-tag">Colorful</span></div>
+      <div class="model-img-wrap"><img src="https://dlcdnwebimgs.asus.com/gain/04c8f5c5-dc39-4e5b-8998-4cf5ef9ed468/w800/fwebp" alt="Asus VivoBook 15" onerror="this.src='https://placehold.co/300x160/0a1830/00aaff?text=Asus+VivoBook+15'"></div>
+      <div class="model-info">
+        <div class="model-brand">Asus</div>
+        <div class="model-name">VivoBook 15</div>
+        <div class="model-tags"><span class="model-tag">Student</span><span class="model-tag">Colorful</span></div>
+      </div>
     </div>
     <div class="model-card" data-brand="asus">
-      <div class="model-brand">Asus</div>
-      <div class="model-name">ZenBook 14</div>
-      <div class="model-tags"><span class="model-tag">Premium</span><span class="model-tag">Compact</span></div>
+      <div class="model-img-wrap"><img src="https://dlcdnwebimgs.asus.com/gain/4e04f490-a89b-4bea-9a6a-c560f5df5e76/w800/fwebp" alt="Asus ZenBook 14" onerror="this.src='https://placehold.co/300x160/0a1830/00aaff?text=Asus+ZenBook+14'"></div>
+      <div class="model-info">
+        <div class="model-brand">Asus</div>
+        <div class="model-name">ZenBook 14</div>
+        <div class="model-tags"><span class="model-tag">Premium</span><span class="model-tag">Compact</span></div>
+      </div>
     </div>
     <div class="model-card" data-brand="asus">
-      <div class="model-brand">Asus</div>
-      <div class="model-name">TUF Gaming A15</div>
-      <div class="model-tags"><span class="model-tag">Gaming</span><span class="model-tag">Durable</span></div>
+      <div class="model-img-wrap"><img src="https://dlcdnwebimgs.asus.com/gain/b14e57b2-d3e7-4e3b-8855-c76af7d5e918/w800/fwebp" alt="Asus TUF Gaming A15" onerror="this.src='https://placehold.co/300x160/0a1830/00aaff?text=TUF+Gaming+A15'"></div>
+      <div class="model-info">
+        <div class="model-brand">Asus</div>
+        <div class="model-name">TUF Gaming A15</div>
+        <div class="model-tags"><span class="model-tag">Gaming</span><span class="model-tag">Durable</span></div>
+      </div>
     </div>
     <div class="model-card" data-brand="asus">
-      <div class="model-brand">Asus</div>
-      <div class="model-name">ROG Strix G15</div>
-      <div class="model-tags"><span class="model-tag">Gaming</span><span class="model-tag">RTX 3060</span></div>
+      <div class="model-img-wrap"><img src="https://dlcdnwebimgs.asus.com/gain/1abb6e32-eb0c-4ac4-be7c-c5e7c9be4e68/w800/fwebp" alt="Asus ROG Strix G15" onerror="this.src='https://placehold.co/300x160/0a1830/00aaff?text=ROG+Strix+G15'"></div>
+      <div class="model-info">
+        <div class="model-brand">Asus</div>
+        <div class="model-name">ROG Strix G15</div>
+        <div class="model-tags"><span class="model-tag">Gaming</span><span class="model-tag">RTX 3060</span></div>
+      </div>
     </div>
     <div class="model-card" data-brand="asus">
-      <div class="model-brand">Asus</div>
-      <div class="model-name">ExpertBook B1</div>
-      <div class="model-tags"><span class="model-tag">Business</span><span class="model-tag">Secure</span></div>
+      <div class="model-img-wrap"><img src="https://dlcdnwebimgs.asus.com/gain/a60e36fe-d0a4-4fdf-b21d-8c74a71cb4e3/w800/fwebp" alt="Asus ExpertBook B1" onerror="this.src='https://placehold.co/300x160/0a1830/00aaff?text=ExpertBook+B1'"></div>
+      <div class="model-info">
+        <div class="model-brand">Asus</div>
+        <div class="model-name">ExpertBook B1</div>
+        <div class="model-tags"><span class="model-tag">Business</span><span class="model-tag">Secure</span></div>
+      </div>
     </div>
   </div>
 </section>
@@ -955,3 +1053,4 @@
 </script>
 </body>
 </html>
+
