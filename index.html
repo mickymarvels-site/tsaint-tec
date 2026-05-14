@@ -432,57 +432,88 @@
 
   .models-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 16px;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
   }
 
   .model-card {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 8px;
+    background: #0c1d38;
+    border: 1px solid rgba(0,170,255,0.15);
+    border-radius: 12px;
     padding: 0;
-    transition: border-color .2s, transform .2s;
+    transition: border-color .2s, transform .2s, box-shadow .2s;
     cursor: pointer;
     overflow: hidden;
   }
-  .model-card:hover { border-color: rgba(0,170,255,.5); transform: translateY(-3px); }
-
-  .model-img {
-    width: 100%; height: 160px;
-    object-fit: cover;
-    background: #0a1a30;
-    display: block;
+  .model-card:hover {
+    border-color: rgba(0,170,255,.45);
+    transform: translateY(-4px);
+    box-shadow: 0 16px 40px rgba(0,87,255,.18);
   }
+
   .model-img-wrap {
-    width: 100%; height: 160px;
-    background: linear-gradient(135deg, #0a1830, #0d2040);
+    width: 100%; height: 200px;
+    background: linear-gradient(160deg, #071428, #0a1d3a);
     display: flex; align-items: center; justify-content: center;
     overflow: hidden;
   }
   .model-img-wrap img {
     width: 100%; height: 100%;
-    object-fit: contain;
-    padding: 12px;
-    transition: transform .3s;
+    object-fit: cover;
+    transition: transform .4s;
   }
-  .model-card:hover .model-img-wrap img { transform: scale(1.05); }
+  .model-card:hover .model-img-wrap img { transform: scale(1.06); }
 
-  .model-info { padding: 16px; }
+  .model-info { padding: 18px; }
 
   .model-brand {
     font-size: .65rem; font-weight: 700;
     letter-spacing: 2px; text-transform: uppercase;
     color: var(--cyan); margin-bottom: 4px;
   }
-  .model-name { font-size: .95rem; font-weight: 700; margin-bottom: 10px; }
-  .model-tags { display: flex; gap: 6px; flex-wrap: wrap; }
+  .model-name {
+    font-size: 1.1rem; font-weight: 800;
+    margin-bottom: 4px; color: var(--white);
+  }
+  .model-spec {
+    font-size: .75rem; color: var(--gray);
+    margin-bottom: 10px;
+  }
+  .model-tags { display: flex; gap: 5px; flex-wrap: wrap; margin-bottom: 14px; }
   .model-tag {
-    font-size: .6rem; font-weight: 700; letter-spacing: 1px;
-    padding: 3px 8px; border-radius: 2px;
+    font-size: .58rem; font-weight: 700; letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 3px 9px; border-radius: 3px;
     background: rgba(0,170,255,.1);
     border: 1px solid rgba(0,170,255,.2);
     color: var(--electric);
   }
+
+  .model-price-row {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 4px;
+  }
+  .model-price-amount {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.6rem; letter-spacing: 1px;
+    color: var(--gold);
+  }
+  .model-price-currency {
+    font-size: .65rem; font-weight: 700;
+    letter-spacing: 1px; margin-left: 4px;
+    color: var(--gray); vertical-align: middle;
+  }
+  .model-order-btn {
+    display: inline-flex; align-items: center; gap: 5px;
+    color: #25d366;
+    font-size: .78rem; font-weight: 700;
+    letter-spacing: .5px;
+    text-decoration: none;
+    transition: opacity .2s;
+    border: none; background: transparent; cursor: pointer;
+  }
+  .model-order-btn:hover { opacity: .75; }
+  .model-order-btn svg { flex-shrink: 0; }
 
   /* ── CONDITION BANNERS ── */
   .condition-grid {
@@ -777,107 +808,257 @@
     <!-- HP -->
     <div class="model-card" data-brand="hp">
       <div class="model-img-wrap"><img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=400&h=200&fit=crop&auto=format" alt="HP EliteBook 840 G5"></div>
-      <div class="model-info"><div class="model-brand">HP</div><div class="model-name">EliteBook 840 G5</div><div class="model-tags"><span class="model-tag">Business</span><span class="model-tag">UK Used</span></div></div>
+      <div class="model-info">
+        <div class="model-brand">HP</div>
+        <div class="model-name">EliteBook 840 G5</div>
+        <div class="model-price"><span class="model-price-amount">185.000</span><span class="model-price-currency">FCFA</span></div>
+        <div class="model-tags"><span class="model-tag">Business</span><span class="model-tag">UK Used</span></div>
+        <a class="model-price-whatsapp" href="https://wa.me/237650922053?text=Hi, I'm interested in the HP EliteBook 840 G5" target="_blank">🛒 Order Now</a>
+      </div>
     </div>
     <div class="model-card" data-brand="hp">
       <div class="model-img-wrap"><img src="https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?w=400&h=200&fit=crop&auto=format" alt="HP EliteBook 850 G6"></div>
-      <div class="model-info"><div class="model-brand">HP</div><div class="model-name">EliteBook 850 G6</div><div class="model-tags"><span class="model-tag">Business</span><span class="model-tag">Core i7</span></div></div>
+      <div class="model-info">
+        <div class="model-brand">HP</div>
+        <div class="model-name">EliteBook 850 G6</div>
+        <div class="model-price"><span class="model-price-amount">210.000</span><span class="model-price-currency">FCFA</span></div>
+        <div class="model-tags"><span class="model-tag">Business</span><span class="model-tag">Core i7</span></div>
+        <a class="model-price-whatsapp" href="https://wa.me/237650922053?text=Hi, I'm interested in the HP EliteBook 850 G6" target="_blank">🛒 Order Now</a>
+      </div>
     </div>
     <div class="model-card" data-brand="hp">
       <div class="model-img-wrap"><img src="https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=400&h=200&fit=crop&auto=format" alt="HP ProBook 450 G6"></div>
-      <div class="model-info"><div class="model-brand">HP</div><div class="model-name">ProBook 450 G6</div><div class="model-tags"><span class="model-tag">Student</span><span class="model-tag">Affordable</span></div></div>
+      <div class="model-info">
+        <div class="model-brand">HP</div>
+        <div class="model-name">ProBook 450 G6</div>
+        <div class="model-price"><span class="model-price-amount">155.000</span><span class="model-price-currency">FCFA</span></div>
+        <div class="model-tags"><span class="model-tag">Student</span><span class="model-tag">Affordable</span></div>
+        <a class="model-price-whatsapp" href="https://wa.me/237650922053?text=Hi, I'm interested in the HP ProBook 450 G6" target="_blank">🛒 Order Now</a>
+      </div>
     </div>
     <div class="model-card" data-brand="hp">
       <div class="model-img-wrap"><img src="https://images.unsplash.com/photo-1611078489935-0cb964de46d6?w=400&h=200&fit=crop&auto=format" alt="HP Pavilion 15"></div>
-      <div class="model-info"><div class="model-brand">HP</div><div class="model-name">Pavilion 15</div><div class="model-tags"><span class="model-tag">Everyday</span><span class="model-tag">Brand New</span></div></div>
+      <div class="model-info">
+        <div class="model-brand">HP</div>
+        <div class="model-name">Pavilion 15</div>
+        <div class="model-price"><span class="model-price-amount">280.000</span><span class="model-price-currency">FCFA</span></div>
+        <div class="model-tags"><span class="model-tag">Everyday</span><span class="model-tag">Brand New</span></div>
+        <a class="model-price-whatsapp" href="https://wa.me/237650922053?text=Hi, I'm interested in the HP Pavilion 15" target="_blank">🛒 Order Now</a>
+      </div>
     </div>
     <div class="model-card" data-brand="hp">
       <div class="model-img-wrap"><img src="https://images.unsplash.com/photo-1593642632559-0c6d3fc62b89?w=400&h=200&fit=crop&auto=format" alt="HP ZBook 15 G5"></div>
-      <div class="model-info"><div class="model-brand">HP</div><div class="model-name">ZBook 15 G5</div><div class="model-tags"><span class="model-tag">Workstation</span><span class="model-tag">Design</span></div></div>
+      <div class="model-info">
+        <div class="model-brand">HP</div>
+        <div class="model-name">ZBook 15 G5</div>
+        <div class="model-price"><span class="model-price-amount">320.000</span><span class="model-price-currency">FCFA</span></div>
+        <div class="model-tags"><span class="model-tag">Workstation</span><span class="model-tag">Design</span></div>
+        <a class="model-price-whatsapp" href="https://wa.me/237650922053?text=Hi, I'm interested in the HP ZBook 15 G5" target="_blank">🛒 Order Now</a>
+      </div>
     </div>
     <!-- DELL -->
     <div class="model-card" data-brand="dell">
       <div class="model-img-wrap"><img src="https://images.unsplash.com/photo-1484788984921-03950022c9ef?w=400&h=200&fit=crop&auto=format" alt="Dell Latitude 5400"></div>
-      <div class="model-info"><div class="model-brand">Dell</div><div class="model-name">Latitude 5400</div><div class="model-tags"><span class="model-tag">Business</span><span class="model-tag">UK Used</span></div></div>
+      <div class="model-info">
+        <div class="model-brand">Dell</div>
+        <div class="model-name">Latitude 5400</div>
+        <div class="model-price"><span class="model-price-amount">175.000</span><span class="model-price-currency">FCFA</span></div>
+        <div class="model-tags"><span class="model-tag">Business</span><span class="model-tag">UK Used</span></div>
+        <a class="model-price-whatsapp" href="https://wa.me/237650922053?text=Hi, I'm interested in the Dell Latitude 5400" target="_blank">🛒 Order Now</a>
+      </div>
     </div>
     <div class="model-card" data-brand="dell">
       <div class="model-img-wrap"><img src="https://images.unsplash.com/photo-1517430816045-df4b7de11d1d?w=400&h=200&fit=crop&auto=format" alt="Dell Latitude 7410"></div>
-      <div class="model-info"><div class="model-brand">Dell</div><div class="model-name">Latitude 7410</div><div class="model-tags"><span class="model-tag">Premium</span><span class="model-tag">Core i7</span></div></div>
+      <div class="model-info">
+        <div class="model-brand">Dell</div>
+        <div class="model-name">Latitude 7410</div>
+        <div class="model-price"><span class="model-price-amount">230.000</span><span class="model-price-currency">FCFA</span></div>
+        <div class="model-tags"><span class="model-tag">Premium</span><span class="model-tag">Core i7</span></div>
+        <a class="model-price-whatsapp" href="https://wa.me/237650922053?text=Hi, I'm interested in the Dell Latitude 7410" target="_blank">🛒 Order Now</a>
+      </div>
     </div>
     <div class="model-card" data-brand="dell">
       <div class="model-img-wrap"><img src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=400&h=200&fit=crop&auto=format" alt="Dell Inspiron 15"></div>
-      <div class="model-info"><div class="model-brand">Dell</div><div class="model-name">Inspiron 15 5000</div><div class="model-tags"><span class="model-tag">Everyday</span><span class="model-tag">Student</span></div></div>
+      <div class="model-info">
+        <div class="model-brand">Dell</div>
+        <div class="model-name">Inspiron 15 5000</div>
+        <div class="model-price"><span class="model-price-amount">150.000</span><span class="model-price-currency">FCFA</span></div>
+        <div class="model-tags"><span class="model-tag">Everyday</span><span class="model-tag">Student</span></div>
+        <a class="model-price-whatsapp" href="https://wa.me/237650922053?text=Hi, I'm interested in the Dell Inspiron 15 5000" target="_blank">🛒 Order Now</a>
+      </div>
     </div>
     <div class="model-card" data-brand="dell">
       <div class="model-img-wrap"><img src="https://images.unsplash.com/photo-1541807084-5c52b6b3adef?w=400&h=200&fit=crop&auto=format" alt="Dell XPS 13"></div>
-      <div class="model-info"><div class="model-brand">Dell</div><div class="model-name">XPS 13</div><div class="model-tags"><span class="model-tag">Ultra-thin</span><span class="model-tag">Premium</span></div></div>
+      <div class="model-info">
+        <div class="model-brand">Dell</div>
+        <div class="model-name">XPS 13</div>
+        <div class="model-price"><span class="model-price-amount">350.000</span><span class="model-price-currency">FCFA</span></div>
+        <div class="model-tags"><span class="model-tag">Ultra-thin</span><span class="model-tag">Premium</span></div>
+        <a class="model-price-whatsapp" href="https://wa.me/237650922053?text=Hi, I'm interested in the Dell XPS 13" target="_blank">🛒 Order Now</a>
+      </div>
     </div>
     <div class="model-card" data-brand="dell">
       <div class="model-img-wrap"><img src="https://images.unsplash.com/photo-1504707748692-419802cf939d?w=400&h=200&fit=crop&auto=format" alt="Dell Precision 5530"></div>
-      <div class="model-info"><div class="model-brand">Dell</div><div class="model-name">Precision 5530</div><div class="model-tags"><span class="model-tag">Workstation</span><span class="model-tag">4K</span></div></div>
+      <div class="model-info">
+        <div class="model-brand">Dell</div>
+        <div class="model-name">Precision 5530</div>
+        <div class="model-price"><span class="model-price-amount">380.000</span><span class="model-price-currency">FCFA</span></div>
+        <div class="model-tags"><span class="model-tag">Workstation</span><span class="model-tag">4K</span></div>
+        <a class="model-price-whatsapp" href="https://wa.me/237650922053?text=Hi, I'm interested in the Dell Precision 5530" target="_blank">🛒 Order Now</a>
+      </div>
     </div>
     <!-- LENOVO -->
     <div class="model-card" data-brand="lenovo">
       <div class="model-img-wrap"><img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=400&h=200&fit=crop&auto=format" alt="Lenovo ThinkPad T480"></div>
-      <div class="model-info"><div class="model-brand">Lenovo</div><div class="model-name">ThinkPad T480</div><div class="model-tags"><span class="model-tag">Business</span><span class="model-tag">Reliable</span></div></div>
+      <div class="model-info">
+        <div class="model-brand">Lenovo</div>
+        <div class="model-name">ThinkPad T480</div>
+        <div class="model-price"><span class="model-price-amount">190.000</span><span class="model-price-currency">FCFA</span></div>
+        <div class="model-tags"><span class="model-tag">Business</span><span class="model-tag">Reliable</span></div>
+        <a class="model-price-whatsapp" href="https://wa.me/237650922053?text=Hi, I'm interested in the Lenovo ThinkPad T480" target="_blank">🛒 Order Now</a>
+      </div>
     </div>
     <div class="model-card" data-brand="lenovo">
       <div class="model-img-wrap"><img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=400&h=200&fit=crop&auto=format&sat=-50" alt="ThinkPad X1 Carbon"></div>
-      <div class="model-info"><div class="model-brand">Lenovo</div><div class="model-name">ThinkPad X1 Carbon</div><div class="model-tags"><span class="model-tag">Ultra-light</span><span class="model-tag">Premium</span></div></div>
+      <div class="model-info">
+        <div class="model-brand">Lenovo</div>
+        <div class="model-name">ThinkPad X1 Carbon</div>
+        <div class="model-price"><span class="model-price-amount">420.000</span><span class="model-price-currency">FCFA</span></div>
+        <div class="model-tags"><span class="model-tag">Ultra-light</span><span class="model-tag">Premium</span></div>
+        <a class="model-price-whatsapp" href="https://wa.me/237650922053?text=Hi, I'm interested in the Lenovo ThinkPad X1 Carbon" target="_blank">🛒 Order Now</a>
+      </div>
     </div>
     <div class="model-card" data-brand="lenovo">
       <div class="model-img-wrap"><img src="https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?w=400&h=200&fit=crop&auto=format&sat=-30" alt="ThinkPad E14"></div>
-      <div class="model-info"><div class="model-brand">Lenovo</div><div class="model-name">ThinkPad E14</div><div class="model-tags"><span class="model-tag">Business</span><span class="model-tag">Affordable</span></div></div>
+      <div class="model-info">
+        <div class="model-brand">Lenovo</div>
+        <div class="model-name">ThinkPad E14</div>
+        <div class="model-price"><span class="model-price-amount">165.000</span><span class="model-price-currency">FCFA</span></div>
+        <div class="model-tags"><span class="model-tag">Business</span><span class="model-tag">Affordable</span></div>
+        <a class="model-price-whatsapp" href="https://wa.me/237650922053?text=Hi, I'm interested in the Lenovo ThinkPad E14" target="_blank">🛒 Order Now</a>
+      </div>
     </div>
     <div class="model-card" data-brand="lenovo">
       <div class="model-img-wrap"><img src="https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=400&h=200&fit=crop&auto=format&hue=200" alt="Lenovo IdeaPad 3"></div>
-      <div class="model-info"><div class="model-brand">Lenovo</div><div class="model-name">IdeaPad 3</div><div class="model-tags"><span class="model-tag">Student</span><span class="model-tag">Everyday</span></div></div>
+      <div class="model-info">
+        <div class="model-brand">Lenovo</div>
+        <div class="model-name">IdeaPad 3</div>
+        <div class="model-price"><span class="model-price-amount">150.000</span><span class="model-price-currency">FCFA</span></div>
+        <div class="model-tags"><span class="model-tag">Student</span><span class="model-tag">Everyday</span></div>
+        <a class="model-price-whatsapp" href="https://wa.me/237650922053?text=Hi, I'm interested in the Lenovo IdeaPad 3" target="_blank">🛒 Order Now</a>
+      </div>
     </div>
     <div class="model-card" data-brand="lenovo">
       <div class="model-img-wrap"><img src="https://images.unsplash.com/photo-1603302576837-37561b2e2302?w=400&h=200&fit=crop&auto=format" alt="Lenovo Legion 5"></div>
-      <div class="model-info"><div class="model-brand">Lenovo</div><div class="model-name">Legion 5</div><div class="model-tags"><span class="model-tag">Gaming</span><span class="model-tag">RTX GPU</span></div></div>
+      <div class="model-info">
+        <div class="model-brand">Lenovo</div>
+        <div class="model-name">Legion 5</div>
+        <div class="model-price"><span class="model-price-amount">480.000</span><span class="model-price-currency">FCFA</span></div>
+        <div class="model-tags"><span class="model-tag">Gaming</span><span class="model-tag">RTX GPU</span></div>
+        <a class="model-price-whatsapp" href="https://wa.me/237650922053?text=Hi, I'm interested in the Lenovo Legion 5" target="_blank">🛒 Order Now</a>
+      </div>
     </div>
     <!-- ACER -->
     <div class="model-card" data-brand="acer">
       <div class="model-img-wrap"><img src="https://images.unsplash.com/photo-1593642632559-0c6d3fc62b89?w=400&h=200&fit=crop&auto=format&hue=180" alt="Acer Aspire 5"></div>
-      <div class="model-info"><div class="model-brand">Acer</div><div class="model-name">Aspire 5</div><div class="model-tags"><span class="model-tag">Student</span><span class="model-tag">Affordable</span></div></div>
+      <div class="model-info">
+        <div class="model-brand">Acer</div>
+        <div class="model-name">Aspire 5</div>
+        <div class="model-price"><span class="model-price-amount">155.000</span><span class="model-price-currency">FCFA</span></div>
+        <div class="model-tags"><span class="model-tag">Student</span><span class="model-tag">Affordable</span></div>
+        <a class="model-price-whatsapp" href="https://wa.me/237650922053?text=Hi, I'm interested in the Acer Aspire 5" target="_blank">🛒 Order Now</a>
+      </div>
     </div>
     <div class="model-card" data-brand="acer">
       <div class="model-img-wrap"><img src="https://images.unsplash.com/photo-1611078489935-0cb964de46d6?w=400&h=200&fit=crop&auto=format&sat=-20" alt="Acer Swift 3"></div>
-      <div class="model-info"><div class="model-brand">Acer</div><div class="model-name">Swift 3</div><div class="model-tags"><span class="model-tag">Ultra-thin</span><span class="model-tag">Light</span></div></div>
+      <div class="model-info">
+        <div class="model-brand">Acer</div>
+        <div class="model-name">Swift 3</div>
+        <div class="model-price"><span class="model-price-amount">195.000</span><span class="model-price-currency">FCFA</span></div>
+        <div class="model-tags"><span class="model-tag">Ultra-thin</span><span class="model-tag">Light</span></div>
+        <a class="model-price-whatsapp" href="https://wa.me/237650922053?text=Hi, I'm interested in the Acer Swift 3" target="_blank">🛒 Order Now</a>
+      </div>
     </div>
     <div class="model-card" data-brand="acer">
       <div class="model-img-wrap"><img src="https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?w=400&h=200&fit=crop&auto=format" alt="Acer Nitro 5"></div>
-      <div class="model-info"><div class="model-brand">Acer</div><div class="model-name">Nitro 5</div><div class="model-tags"><span class="model-tag">Gaming</span><span class="model-tag">GTX 1650</span></div></div>
+      <div class="model-info">
+        <div class="model-brand">Acer</div>
+        <div class="model-name">Nitro 5</div>
+        <div class="model-price"><span class="model-price-amount">395.000</span><span class="model-price-currency">FCFA</span></div>
+        <div class="model-tags"><span class="model-tag">Gaming</span><span class="model-tag">GTX 1650</span></div>
+        <a class="model-price-whatsapp" href="https://wa.me/237650922053?text=Hi, I'm interested in the Acer Nitro 5" target="_blank">🛒 Order Now</a>
+      </div>
     </div>
     <div class="model-card" data-brand="acer">
       <div class="model-img-wrap"><img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=400&h=200&fit=crop&auto=format" alt="Acer Predator Helios 300"></div>
-      <div class="model-info"><div class="model-brand">Acer</div><div class="model-name">Predator Helios 300</div><div class="model-tags"><span class="model-tag">Gaming</span><span class="model-tag">RTX</span></div></div>
+      <div class="model-info">
+        <div class="model-brand">Acer</div>
+        <div class="model-name">Predator Helios 300</div>
+        <div class="model-price"><span class="model-price-amount">550.000</span><span class="model-price-currency">FCFA</span></div>
+        <div class="model-tags"><span class="model-tag">Gaming</span><span class="model-tag">RTX</span></div>
+        <a class="model-price-whatsapp" href="https://wa.me/237650922053?text=Hi, I'm interested in the Acer Predator Helios 300" target="_blank">🛒 Order Now</a>
+      </div>
     </div>
     <div class="model-card" data-brand="acer">
       <div class="model-img-wrap"><img src="https://images.unsplash.com/photo-1484788984921-03950022c9ef?w=400&h=200&fit=crop&auto=format&sat=-20" alt="Acer TravelMate P2"></div>
-      <div class="model-info"><div class="model-brand">Acer</div><div class="model-name">TravelMate P2</div><div class="model-tags"><span class="model-tag">Business</span><span class="model-tag">Rugged</span></div></div>
+      <div class="model-info">
+        <div class="model-brand">Acer</div>
+        <div class="model-name">TravelMate P2</div>
+        <div class="model-price"><span class="model-price-amount">180.000</span><span class="model-price-currency">FCFA</span></div>
+        <div class="model-tags"><span class="model-tag">Business</span><span class="model-tag">Rugged</span></div>
+        <a class="model-price-whatsapp" href="https://wa.me/237650922053?text=Hi, I'm interested in the Acer TravelMate P2" target="_blank">🛒 Order Now</a>
+      </div>
     </div>
     <!-- ASUS -->
     <div class="model-card" data-brand="asus">
       <div class="model-img-wrap"><img src="https://images.unsplash.com/photo-1517430816045-df4b7de11d1d?w=400&h=200&fit=crop&auto=format&hue=220" alt="Asus VivoBook 15"></div>
-      <div class="model-info"><div class="model-brand">Asus</div><div class="model-name">VivoBook 15</div><div class="model-tags"><span class="model-tag">Student</span><span class="model-tag">Colorful</span></div></div>
+      <div class="model-info">
+        <div class="model-brand">Asus</div>
+        <div class="model-name">VivoBook 15</div>
+        <div class="model-price"><span class="model-price-amount">160.000</span><span class="model-price-currency">FCFA</span></div>
+        <div class="model-tags"><span class="model-tag">Student</span><span class="model-tag">Colorful</span></div>
+        <a class="model-price-whatsapp" href="https://wa.me/237650922053?text=Hi, I'm interested in the Asus VivoBook 15" target="_blank">🛒 Order Now</a>
+      </div>
     </div>
     <div class="model-card" data-brand="asus">
       <div class="model-img-wrap"><img src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=400&h=200&fit=crop&auto=format&sat=-10" alt="Asus ZenBook 14"></div>
-      <div class="model-info"><div class="model-brand">Asus</div><div class="model-name">ZenBook 14</div><div class="model-tags"><span class="model-tag">Premium</span><span class="model-tag">Compact</span></div></div>
+      <div class="model-info">
+        <div class="model-brand">Asus</div>
+        <div class="model-name">ZenBook 14</div>
+        <div class="model-price"><span class="model-price-amount">310.000</span><span class="model-price-currency">FCFA</span></div>
+        <div class="model-tags"><span class="model-tag">Premium</span><span class="model-tag">Compact</span></div>
+        <a class="model-price-whatsapp" href="https://wa.me/237650922053?text=Hi, I'm interested in the Asus ZenBook 14" target="_blank">🛒 Order Now</a>
+      </div>
     </div>
     <div class="model-card" data-brand="asus">
       <div class="model-img-wrap"><img src="https://images.unsplash.com/photo-1603302576837-37561b2e2302?w=400&h=200&fit=crop&auto=format&hue=200" alt="Asus TUF Gaming A15"></div>
-      <div class="model-info"><div class="model-brand">Asus</div><div class="model-name">TUF Gaming A15</div><div class="model-tags"><span class="model-tag">Gaming</span><span class="model-tag">Durable</span></div></div>
+      <div class="model-info">
+        <div class="model-brand">Asus</div>
+        <div class="model-name">TUF Gaming A15</div>
+        <div class="model-price"><span class="model-price-amount">430.000</span><span class="model-price-currency">FCFA</span></div>
+        <div class="model-tags"><span class="model-tag">Gaming</span><span class="model-tag">Durable</span></div>
+        <a class="model-price-whatsapp" href="https://wa.me/237650922053?text=Hi, I'm interested in the Asus TUF Gaming A15" target="_blank">🛒 Order Now</a>
+      </div>
     </div>
     <div class="model-card" data-brand="asus">
       <div class="model-img-wrap"><img src="https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?w=400&h=200&fit=crop&auto=format&hue=240" alt="Asus ROG Strix G15"></div>
-      <div class="model-info"><div class="model-brand">Asus</div><div class="model-name">ROG Strix G15</div><div class="model-tags"><span class="model-tag">Gaming</span><span class="model-tag">RTX 3060</span></div></div>
+      <div class="model-info">
+        <div class="model-brand">Asus</div>
+        <div class="model-name">ROG Strix G15</div>
+        <div class="model-price"><span class="model-price-amount">580.000</span><span class="model-price-currency">FCFA</span></div>
+        <div class="model-tags"><span class="model-tag">Gaming</span><span class="model-tag">RTX 3060</span></div>
+        <a class="model-price-whatsapp" href="https://wa.me/237650922053?text=Hi, I'm interested in the Asus ROG Strix G15" target="_blank">🛒 Order Now</a>
+      </div>
     </div>
     <div class="model-card" data-brand="asus">
       <div class="model-img-wrap"><img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=400&h=200&fit=crop&auto=format&sat=-30" alt="Asus ExpertBook B1"></div>
-      <div class="model-info"><div class="model-brand">Asus</div><div class="model-name">ExpertBook B1</div><div class="model-tags"><span class="model-tag">Business</span><span class="model-tag">Secure</span></div></div>
+      <div class="model-info">
+        <div class="model-brand">Asus</div>
+        <div class="model-name">ExpertBook B1</div>
+        <div class="model-price"><span class="model-price-amount">170.000</span><span class="model-price-currency">FCFA</span></div>
+        <div class="model-tags"><span class="model-tag">Business</span><span class="model-tag">Secure</span></div>
+        <a class="model-price-whatsapp" href="https://wa.me/237650922053?text=Hi, I'm interested in the Asus ExpertBook B1" target="_blank">🛒 Order Now</a>
+      </div>
     </div>
   </div>
 </section>
